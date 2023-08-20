@@ -1,3 +1,4 @@
+create database automatizacion;
 USE automatizacion;
 
 CREATE TABLE estudiantes (

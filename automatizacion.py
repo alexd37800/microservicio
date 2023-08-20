@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # Configuración de la aplicación Flask
 app.secret_key = 'Alex1275$'  # Clave secreta utilizada para cifrar datos de sesión
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'  # Dirección del servidor de base de datos
+app.config['MYSQL_DATABASE_HOST'] = 'mysql-container'  # Nombre del contenedor MySQL en la red de Docker
 app.config['MYSQL_DATABASE_USER'] = 'root'  # Usuario de la base de datos
 app.config['MYSQL_DATABASE_PASSWORD'] = 'linux'  # Contraseña del usuario de la base de datos
 app.config['MYSQL_DATABASE_DB'] = 'automatizacion'  # Nombre de la base de datos

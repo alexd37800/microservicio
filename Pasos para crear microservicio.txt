@@ -1,0 +1,42 @@
+Crear microservicio utilizando 2 contenedores Docker (Aplicación Flask y MYSQL)
+
+Alumno: Alejandro Tadeo Martínez
+Grupo: GRIC3091
+
+*****Crear red para docker*****
+
+docker network create mi-red-docker
+
+*****Descargar imagen docker MYSQL****
+
+docker pull mysql:latest
+
+*****Crear contenedor MYSQL*****
+
+docker run -d --name mysql-container --network mi-red-docker -e MYSQL_ROOT_PASSWORD=linux -p 3307:3306 mysql
+
+*****Acceder al contenedor MYSQL y crear la base de datos******
+
+docker exec -it mysql-container mysql -u root -p
+
+###Pedira la contraseña
+
+###Agregar lo que viene en el archivo automatiza.sql
+
+****Crear la imagen de la aplicacion utilizando el archivo Dockerfile****
+
+docker build -t autom .
+
+****Crear contenedor de la imagen *****
+
+docker run -d --name flask-container --network mi-red-docker -p 5000:5000 autom 
+
+/////Todo se prueba desde Postman/////
+
+
+
+
+
+
+
+
